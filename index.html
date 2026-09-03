@@ -3,277 +3,1816 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbara Victorious Jombang - Jasa Desain Grafis & Livery Bus</title>
+
+    <title>Barbara Victorious Jombang | Jasa Desain Grafis & Livery Bus</title>
+
     <style>
+
+        /* =====================================================
+           ROOT
+        ===================================================== */
+
         :root {
-            --primary: #111827;
-            --accent: #dc2626;
-            --light: #f9fafb;
-            --card: #ffffff;
-            --text: #1f2937;
-            --muted: #4b5563;
+            --black: #090909;
+            --dark: #111111;
+            --dark-2: #181818;
+
+            --red: #d71920;
+            --red-dark: #ad1016;
+
+            --white: #ffffff;
+            --light: #f5f5f5;
+            --gray: #777777;
+            --gray-light: #e8e8e8;
+
+            --container: 1180px;
         }
 
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: #f3f4f6;
-            color: var(--text);
+            background: var(--light);
+            color: #202020;
+            font-family:
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
             line-height: 1.6;
-            padding-bottom: 40px;
         }
 
-        header {
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 4px solid var(--accent);
+        img {
+            max-width: 100%;
+            display: block;
         }
 
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-            color: #ffffff;
+        a {
+            text-decoration: none;
         }
 
-        header p {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
 
-        .badge {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            margin-top: 12px;
-            text-transform: uppercase;
-        }
+        /* =====================================================
+           CONTAINER
+        ===================================================== */
 
         .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 0 15px;
+            width: min(var(--container), calc(100% - 40px));
+            margin: auto;
         }
 
-        .section-title {
-            font-size: 1.5rem;
-            margin: 30px 0 15px;
-            color: var(--primary);
-            border-left: 5px solid var(--accent);
-            padding-left: 10px;
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+
+            background: rgba(9, 9, 9, 0.94);
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
         }
 
-        .promo-card {
-            background: var(--card);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            border: 2px dashed var(--accent);
-            text-align: center;
-            padding: 20px;
-        }
+        .navbar-inner {
+            min-height: 72px;
 
-        .promo-img-placeholder {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 8px;
-            margin: 15px auto;
-            display: block;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--card);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border: 1px solid #e5e7eb;
             display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: space-between;
         }
 
-        .card h3 {
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 8px;
+        .logo-text {
+            color: white;
+            font-size: 17px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
         }
 
-        .card p {
-            color: var(--muted);
-            font-size: 0.95rem;
-            margin-bottom: 15px;
+        .logo-text span {
+            color: var(--red);
         }
 
-        .card .price {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: var(--accent);
-            margin-bottom: 15px;
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-menu a {
+            color: #bdbdbd;
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: .25s ease;
+        }
+
+        .nav-menu a:hover {
+            color: white;
+        }
+
+        .nav-contact {
+            padding: 9px 16px;
+            border-radius: 5px;
+
+            background: var(--red);
+            color: white !important;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 680px;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    110deg,
+                    rgba(0,0,0,.97) 0%,
+                    rgba(0,0,0,.88) 45%,
+                    rgba(0,0,0,.55) 100%
+                ),
+                url("URL_BACKGROUND_HERO.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+            width: 500px;
+            height: 500px;
+
+            right: -200px;
+            bottom: -260px;
+
+            background: var(--red);
+            opacity: .15;
+
+            border-radius: 50%;
+            filter: blur(10px);
+        }
+
+        .hero-inner {
+            min-height: 680px;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-label {
+            display: inline-block;
+
+            padding-left: 13px;
+            margin-bottom: 22px;
+
+            border-left: 4px solid var(--red);
+
+            color: #c8c8c8;
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            color: white;
+
+            font-size: clamp(3rem, 7vw, 6.5rem);
+            line-height: .9;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            color: var(--red);
+        }
+
+        .hero-description {
+            max-width: 680px;
+
+            color: #bdbdbd;
+
+            font-size: 17px;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
         .btn {
-            display: inline-block;
-            background-color: #25d366;
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 46px;
+
+            padding: 0 22px;
+
+            border-radius: 5px;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            transition: .25s ease;
+        }
+
+        .btn-red {
+            background: var(--red);
             color: white;
-            text-decoration: none;
-            padding: 10px 18px;
-            border-radius: 6px;
-            font-weight: bold;
+        }
+
+        .btn-red:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid #666;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            border-color: white;
+            color: black;
+        }
+
+
+        /* =====================================================
+           SECTION
+        ===================================================== */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-head {
+            margin-bottom: 42px;
+        }
+
+        .section-label {
+            color: var(--red);
+
+            font-size: 12px;
+            font-weight: 900;
+
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+
+        .section-head h2 {
+            margin-top: 8px;
+
+            color: var(--black);
+
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.05;
+            letter-spacing: -1px;
+        }
+
+        .section-head p {
+            max-width: 650px;
+
+            margin-top: 14px;
+
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           PROMO
+        ===================================================== */
+
+        .promo-section {
+            background: white;
+        }
+
+        .promo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            overflow: hidden;
+
+            border-radius: 14px;
+
+            background: var(--dark);
+
+            box-shadow:
+                0 25px 60px rgba(0,0,0,.12);
+        }
+
+        .promo-content {
+            padding: 50px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .promo-small {
+            color: #aaa;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .promo h2 {
+            margin: 10px 0 15px;
+
+            color: white;
+
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: .95;
+        }
+
+        .promo h2 span {
+            color: var(--red);
+        }
+
+        .promo p {
+            max-width: 470px;
+
+            color: #aaa;
+
+            font-size: 15px;
+
+            margin-bottom: 22px;
+        }
+
+        .voucher {
+            width: fit-content;
+
+            padding: 9px 14px;
+
+            margin-bottom: 22px;
+
+            border: 1px dashed var(--red);
+
+            color: white;
+
+            font-size: 13px;
+            font-weight: 900;
+
+            letter-spacing: 1px;
+        }
+
+        .promo-image {
+            min-height: 370px;
+
+            background: #222;
+
+            overflow: hidden;
+        }
+
+        .promo-image img {
+            width: 100%;
+            height: 100%;
+
+            min-height: 370px;
+
+            object-fit: cover;
+        }
+
+
+        /* =====================================================
+           DISCLAIMER
+        ===================================================== */
+
+        .disclaimer {
+            padding: 25px;
+
+            border-left: 4px solid var(--red);
+            border-radius: 7px;
+
+            background: white;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,.04);
+        }
+
+        .disclaimer-title {
+            margin-bottom: 5px;
+
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        .disclaimer p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           PRODUCTS
+        ===================================================== */
+
+        .products {
+            background: var(--light);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .product-card {
+            overflow: hidden;
+
+            border: 1px solid var(--gray-light);
+            border-radius: 12px;
+
+            background: white;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,.04);
+
+            transition: .3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 20px 45px rgba(0,0,0,.11);
+        }
+
+
+        /* SAMPLE IMAGE */
+
+        .product-image {
+            height: 260px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #222,
+                    #555
+                );
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: .45s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.06);
+        }
+
+        .sample-label {
+            position: absolute;
+
+            left: 15px;
+            top: 15px;
+
+            padding: 5px 9px;
+
+            background: rgba(0,0,0,.78);
+
+            color: white;
+
+            font-size: 9px;
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
+        }
+
+
+        /* PRODUCT CONTENT */
+
+        .product-content {
+            padding: 26px;
+        }
+
+        .product-number {
+            color: var(--red);
+
+            font-size: 11px;
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+        .product-content h3 {
+            margin: 7px 0 10px;
+
+            color: var(--black);
+
+            font-size: 21px;
+            line-height: 1.15;
+        }
+
+        .product-content p {
+            min-height: 92px;
+
+            color: var(--gray);
+
+            font-size: 14px;
+        }
+
+        .product-bottom {
+            margin-top: 20px;
+        }
+
+        .price {
+            margin-bottom: 13px;
+
+            color: var(--red);
+
+            font-size: 21px;
+            font-weight: 900;
+        }
+
+        .product-btn {
+            display: block;
+
+            padding: 11px;
+
+            border-radius: 5px;
+
+            background: var(--black);
+
+            color: white;
+
             text-align: center;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            transition: .25s;
         }
 
-        .btn-accent {
-            background-color: var(--accent);
+        .product-btn:hover {
+            background: var(--red);
         }
 
-        .info-box {
-            background: #eff6ff;
-            border-left: 4px solid #3b82f6;
-            padding: 15px;
-            border-radius: 6px;
-            margin-top: 30px;
-            font-size: 0.95rem;
+
+        /* =====================================================
+           DIGITAL SERVICES
+        ===================================================== */
+
+        .digital {
+            background: white;
         }
+
+        .digital-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .digital-card {
+            padding: 30px;
+
+            border: 1px solid var(--gray-light);
+            border-radius: 10px;
+
+            background: white;
+
+            transition: .25s ease;
+        }
+
+        .digital-card:hover {
+            border-color: var(--red);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,.07);
+        }
+
+        .digital-number {
+            color: var(--red);
+
+            font-size: 12px;
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+        .digital-card h3 {
+            margin: 12px 0 10px;
+
+            color: var(--black);
+
+            font-size: 19px;
+            line-height: 1.2;
+        }
+
+        .digital-card p {
+            min-height: 82px;
+
+            color: var(--gray);
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+        }
+
+        .coming {
+            display: inline-block;
+
+            margin-bottom: 16px;
+
+            padding: 4px 8px;
+
+            border-radius: 3px;
+
+            background: #eeeeee;
+
+            color: #666;
+
+            font-size: 9px;
+            font-weight: 900;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =====================================================
+           WHY BARBARA
+        ===================================================== */
+
+        .why {
+            background: var(--black);
+            color: white;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .why .section-label {
+            color: var(--red);
+        }
+
+        .why h2 {
+            margin-top: 8px;
+
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .why h2 span {
+            color: var(--red);
+        }
+
+        .why-description {
+            margin-top: 20px;
+
+            color: #999;
+
+            font-size: 15px;
+        }
+
+        .why-description + .why-description {
+            margin-top: 10px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+        }
+
+        .feature {
+            padding: 25px;
+
+            border: 1px solid #292929;
+            border-radius: 8px;
+
+            background: #101010;
+        }
+
+        .feature h3 {
+            margin-bottom: 7px;
+
+            color: white;
+
+            font-size: 16px;
+        }
+
+        .feature p {
+            color: #888;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact {
+            background: var(--light);
+        }
+
+        .contact-box {
+            padding: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            border: 1px solid var(--gray-light);
+            border-radius: 12px;
+
+            background: white;
+        }
+
+        .contact-box h2 {
+            margin-bottom: 7px;
+
+            color: var(--black);
+
+            font-size: 30px;
+            line-height: 1.1;
+        }
+
+        .contact-box p {
+            color: var(--gray);
+
+            font-size: 14px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+
+        /* =====================================================
+           LOCATION
+        ===================================================== */
+
+        .location {
+            padding-top: 0;
+
+            background: var(--light);
+        }
+
+        .location-box {
+            padding: 30px;
+
+            border-radius: 10px;
+
+            background: white;
+
+            border: 1px solid var(--gray-light);
+        }
+
+        .location-row {
+            margin-bottom: 20px;
+        }
+
+        .location-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .location-row strong {
+            display: block;
+
+            margin-bottom: 4px;
+
+            color: var(--black);
+
+            font-size: 14px;
+        }
+
+        .location-row p {
+            color: var(--gray);
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
 
         footer {
+            padding: 38px 20px;
+
+            background: #060606;
+
+            color: #777;
+
             text-align: center;
-            margin-top: 40px;
-            color: var(--muted);
-            font-size: 0.85rem;
+
+            font-size: 12px;
         }
+
+        footer strong {
+            color: white;
+        }
+
+        .footer-link {
+            display: inline-block;
+
+            margin-top: 8px;
+
+            color: #aaa;
+
+            transition: .2s;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE TABLET
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav-menu {
+                display: none;
+            }
+
+            .promo {
+                grid-template-columns: 1fr;
+            }
+
+            .promo-image {
+                min-height: 300px;
+            }
+
+            .promo-image img {
+                min-height: 300px;
+            }
+
+            .product-grid,
+            .digital-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-box {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+
+        /* =====================================================
+           RESPONSIVE MOBILE
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: min(100% - 28px, var(--container));
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .hero,
+            .hero-inner {
+                min-height: 590px;
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .promo-content {
+                padding: 32px 25px;
+            }
+
+            .promo h2 {
+                font-size: 2.8rem;
+            }
+
+            .product-grid,
+            .digital-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image {
+                height: 230px;
+            }
+
+            .product-content p {
+                min-height: auto;
+            }
+
+            .digital-card p {
+                min-height: auto;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                padding: 30px 24px;
+            }
+
+            .contact-box h2 {
+                font-size: 25px;
+            }
+
+            .contact-buttons {
+                width: 100%;
+                flex-direction: column;
+            }
+        }
+
     </style>
 </head>
+
+
 <body>
 
-    <header>
-        <h1>BARBARA VICTORIOUS JOMBANG</h1>
-        <p>Layanan Jasa Desain Grafis, Livery Bus, Desain Kaos, & Visual Branding Terpercaya</p>
-        <span class="badge">Buka 24 Jam</span>
-    </header>
 
-    <div class="container">
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
-        <!-- PROMO SECTION -->
-        <h2 class="section-title">Promo Spesial Kemerdekaan</h2>
-        <div class="promo-card">
-            <h3>Diskon 20% OFF - Voucher: HUT81</h3>
-            <p>Dapatkan penawaran terbatas untuk pembuatan semua jenis desain grafis & livery bus!</p>
-            
-            <!-- MASUKKAN GAMBAR POSTER PROMO LU DI SINI -->
-            <img src="promosi.jpg" alt="Promo HUT RI 81" class="promo-img-placeholder">
-            
-            <br>
-            <a href="https://wa.me/6281330319051?text=Halo%20Barbara%20Victorious,%20saya%20mau%20klaim%20Voucher%20HUT81" class="btn btn-accent" target="_blank">Klaim Promo via WhatsApp</a>
+<nav class="navbar">
+
+    <div class="container navbar-inner">
+
+        <div class="logo-text">
+            BARBARA <span>VICTORIOUS</span>
         </div>
 
-        <!-- KATALOG PRODUK -->
-        <h2 class="section-title">Produk Utama</h2>
-        
-        <div class="card">
-                <div>
-                    <h3>DISCLAIMER</h3>
-                    <p>Semua desain ini bersifat custom dan sesuai request, kalau request kalian termasuk rumit bisa menambah biaya yaa sesuai tingkat kesulitannya.</p>
-                </div>
-                </div>
-        
-        <div class="grid">
-            <div class="card">
-                   <div>
-                    <h3>Desain Livery Bus</h3>
-                    <p>Desain livery custom kendaraan, bisa untuk game maupun unit nyata</p>
-                </div>
-                <div>
-                    <div class="price">Rp 25.000</div>
-                    <a href="https://wa.me/6281330319051?text=Halo,%20saya%20mau%20pesan%20Desain%20Livery%20Bus" class="btn" target="_blank">Pesan via WA</a>
-                </div>
-            </div>
+        <div class="nav-menu">
 
-            <div class="card">
-                <div>
-                    <h3>Desain Sablon Baju</h3>
-                    <p>Desain kaos keren siap cetak lengkap dengan file mentah vector.</p>
-                </div>
-                <div>
-                    <div class="price">Rp 15.000</div>
-                    <a href="https://wa.me/6281330319051?text=Halo,%20saya%20mau%20pesan%20Desain%20Sablon%20Baju" class="btn" target="_blank">Pesan via WA</a>
-                </div>
-            </div>
+            <a href="#layanan">
+                Layanan
+            </a>
 
-            <div class="card">
-                <div>
-                    <h3>Desain Logo</h3>
-                    <p>Jasa pembuatan desain logo perusahaan, instansi, dll.</p>
-                </div>
-                <div>
-                    <div class="price">Rp 20.000</div>
-                    <a href="https://wa.me/6281330319051?text=Halo,%20saya%20mau%20pesan%20Skin%20Simulator" class="btn" target="_blank">Pesan via WA</a>
-                </div>
-            </div>
-        </div>
-        
-              
+            <a href="#digital">
+                Jasa Digital
+            </a>
 
-        <!-- JASA KONTEN DIGITAL -->
-        <h2 class="section-title">Jasa & Layanan Digital</h2>
-        <div class="grid">
-            <div class="card">
-                <div>
-                    <h3>Desain Grafis Bodi Kendaraan</h3>
-                    <p>Konsep visual branding profesional untuk armada bus, truk, maupun mobil operasional perusahaan.</p>
-                </div>
-                <a href="https://wa.me/6281330319051?text=Halo,%20tanya%20jasa%20Desain%20Bodi%20Kendaraan" class="btn" target="_blank">Konsultasi WA</a>
-            </div>
+            <a href="#tentang">
+                Tentang
+            </a>
 
-            <div class="card">
-                <div>
-                    <h3>Pembuatan Mockup 3D (coomingsoon)</h3>
-                    <p>Visualisasi 3D realistis bodi bus untuk kebutuhan presentasi PO Bus & media promosi digital.</p>
-                </div>
-                <a href="https://wa.me/6281330319051?text=Halo,%20tanya%20jasa%20Mockup%203D" class="btn" target="_blank">Konsultasi WA</a>
-            </div>
+            <a href="#kontak" class="nav-contact">
+                Hubungi Kami
+            </a>
 
-            <div class="card">
-                <div>
-                    <h3>Branding & Logo Otobus</h3>
-                    <p>Pembuatan identitas brand, logo otobus, poster promosi, dan materi konten medsos.</p>
-                </div>
-                <a href="https://wa.me/6281330319051?text=Halo,%20tanya%20jasa%20Branding%20Otobus" class="btn" target="_blank">Konsultasi WA</a>
-            </div>
-        </div>
-
-        <!-- INFORMASI LOKASI -->
-        <div class="info-box">
-            <strong>📍 Alamat Workshop:</strong><br>
-            Dusun Tunggul, Tunggorono, Kec. Jombang, Kabupaten Jombang, Jawa Timur 61419<br>
-            <strong>📞 Kontak WhatsApp:</strong> 0813-3031-9051
         </div>
 
     </div>
 
-    <footer>
-        <p>&copy; 2026 Akbar. All rights reserved.</p>
-    </footer>
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+    <div class="container hero-inner">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                Graphic Design • Livery • Branding
+            </span>
+
+            <h1>
+                VISUAL YANG<br>
+                <span>BERKARAKTER.</span>
+            </h1>
+
+            <p class="hero-description">
+                Barbara Victorious Jombang menyediakan layanan
+                jasa desain grafis, livery bus vector, desain
+                apparel, logo, branding, skin simulator, dan
+                berbagai kebutuhan visual lainnya.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="https://wa.me/6281330319051?text=Halo%20Barbara%20Victorious,%20saya%20ingin%20konsultasi%20desain"
+                    target="_blank"
+                    class="btn btn-red">
+
+                    Konsultasi WhatsApp
+
+                </a>
+
+                <a
+                    href="https://linktr.ee/onlybarzz_"
+                    target="_blank"
+                    class="btn btn-outline">
+
+                    Linktree
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     PROMO
+===================================================== -->
+
+<section class="promo-section">
+
+    <div class="container">
+
+        <div class="promo">
+
+            <div class="promo-content">
+
+                <span class="promo-small">
+                    Promo Spesial Kemerdekaan
+                </span>
+
+                <h2>
+                    DISKON<br>
+                    <span>20% OFF</span>
+                </h2>
+
+                <p>
+                    Dapatkan penawaran terbatas untuk pembuatan
+                    berbagai jenis desain grafis dan livery bus.
+                </p>
+
+                <div class="voucher">
+                    VOUCHER: HUT81
+                </div>
+
+                <a
+                    href="https://wa.me/6281330319051?text=Halo%20Barbara%20Victorious,%20saya%20mau%20klaim%20Voucher%20HUT81"
+                    target="_blank"
+                    class="btn btn-red">
+
+                    Klaim Promo via WhatsApp
+
+                </a>
+
+            </div>
+
+
+            <div class="promo-image">
+
+                <!--
+                    GANTI DENGAN FOTO POSTER PROMO LU
+                -->
+
+                <img
+                    src="promosi.jpg"
+                    alt="Promo HUT RI 81">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DISCLAIMER
+===================================================== -->
+
+<section style="padding-bottom:0; background:#f5f5f5;">
+
+    <div class="container">
+
+        <div class="disclaimer">
+
+            <div class="disclaimer-title">
+                ⚠ Disclaimer
+            </div>
+
+            <p>
+                Semua desain ini bersifat custom dan sesuai
+                request, kalau request kalian termasuk rumit
+                bisa menambah biaya yaa sesuai tingkat
+                kesulitannya.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PRODUK UTAMA
+===================================================== -->
+
+<section class="products" id="layanan">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <span class="section-label">
+                Our Services
+            </span>
+
+            <h2>
+                Produk Utama
+            </h2>
+
+            <p>
+                Pilih layanan desain yang sesuai dengan
+                kebutuhan visual kamu. Semua desain dibuat
+                secara custom sesuai request.
+            </p>
+
+        </div>
+
+
+        <div class="product-grid">
+
+
+            <!-- =================================================
+                 LIVERY BUS
+            ================================================= -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <!--
+                        GANTI FOTO SAMPLE LIVERY DI SINI
+                        Contoh:
+                        src="images/livery.jpg"
+                    -->
+
+                    <img
+                        src="Bus.jpg"
+                        alt="Sample Desain Livery Bus">
+
+                    <span class="sample-label">
+                        SAMPLE PROJECT
+                    </span>
+
+                </div>
+
+
+                <div class="product-content">
+
+                    <span class="product-number">
+                        01 / LIVERY
+                    </span>
+
+                    <h3>
+                        Desain Livery Bus
+                    </h3>
+
+                    <p>
+                        Desain livery bus custom vector HD
+                        presisi tinggi untuk armada bus
+                        pariwisata maupun reguler. Desain
+                        dibuat sesuai konsep dan request
+                        customer.
+                    </p>
+
+
+                    <div class="product-bottom">
+
+                        <div class="price">
+                            Rp 25.000
+                        </div>
+
+                        <a
+                            href="https://wa.me/6281330319051?text=Halo,%20saya%20mau%20pesan%20Desain%20Livery%20Bus"
+                            target="_blank"
+                            class="product-btn">
+
+                            Pesan via WhatsApp
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 SABLON BAJU
+            ================================================= -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <!--
+                        GANTI FOTO SAMPLE KAOS DI SINI
+                    -->
+
+                    <img
+                        src="Kaos.jpg"
+                        alt="Sample Desain Sablon Baju">
+
+                    <span class="sample-label">
+                        SAMPLE PROJECT
+                    </span>
+
+                </div>
+
+
+                <div class="product-content">
+
+                    <span class="product-number">
+                        02 / APPAREL
+                    </span>
+
+                    <h3>
+                        Desain Sablon Baju
+                    </h3>
+
+                    <p>
+                        Desain kaos khas bus/streetwear keren
+                        yang siap cetak lengkap dengan file
+                        mentah vector untuk kebutuhan produksi.
+                    </p>
+
+
+                    <div class="product-bottom">
+
+                        <div class="price">
+                            Rp 15.000
+                        </div>
+
+                        <a
+                            href="https://wa.me/6281330319051?text=Halo,%20saya%20mau%20pesan%20Desain%20Sablon%20Baju"
+                            target="_blank"
+                            class="product-btn">
+
+                            Pesan via WhatsApp
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 LOGO
+            ================================================= -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <!--
+                        GANTI FOTO SAMPLE LOGO DI SINI
+                    -->
+
+                    <img
+                        src="Logo.jpg"
+                        alt="Sample Desain Logo">
+
+                    <span class="sample-label">
+                        SAMPLE PROJECT
+                    </span>
+
+                </div>
+
+
+                <div class="product-content">
+
+                    <span class="product-number">
+                        03 / LOGO
+                    </span>
+
+                    <h3>
+                        Desain Logo
+                    </h3>
+
+                    <p>
+                        Pembuatan logo custom untuk usaha,
+                        komunitas, brand, otobus, maupun
+                        kebutuhan personal dengan konsep
+                        visual sesuai karakter brand.
+                    </p>
+
+
+                    <div class="product-bottom">
+
+                        <div class="price">
+                            Rp 20.000
+                        </div>
+
+                        <a
+                            href="https://wa.me/6281330319051?text=Halo,%20saya%20mau%20pesan%20Desain%20Logo"
+                            target="_blank"
+                            class="product-btn">
+
+                            Pesan via WhatsApp
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--Jasa Layanan Digital-->
+
+<section class="digital" id="digital">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <span class="section-label">
+                More Services
+            </span>
+
+            <h2>
+                Jasa & Layanan Digital
+            </h2>
+
+            <p>
+                Selain produk utama, tersedia berbagai layanan
+                visual tambahan untuk kebutuhan kendaraan,
+                presentasi, branding, dan simulator.
+            </p>
+
+        </div>
+
+
+        <div class="digital-grid">
+
+
+            <!-- DESAIN BODI -->
+
+            <div class="digital-card">
+
+                <span class="digital-number">
+                    01 / VEHICLE
+                </span>
+
+                <h3>
+                    Desain Grafis Bodi Kendaraan
+                </h3>
+
+                <p>
+                    Konsep visual branding profesional untuk
+                    armada bus, truk, maupun mobil operasional
+                    perusahaan.
+                </p>
+
+                <a
+                    href="https://wa.me/6281330319051?text=Halo,%20tanya%20jasa%20Desain%20Grafis%20Bodi%20Kendaraan"
+                    target="_blank"
+                    class="product-btn">
+
+                    Konsultasi WA
+
+                </a>
+
+            </div>
+
+
+
+            <!-- MOCKUP -->
+
+            <div class="digital-card">
+
+                <span class="digital-number">
+                    02 / 3D
+                </span>
+
+                <h3>
+                    Pembuatan Mockup 3D
+                </h3>
+
+                <span class="coming">
+                    COMING SOON
+                </span>
+
+                <p>
+                    Visualisasi 3D realistis bodi bus untuk
+                    kebutuhan presentasi PO Bus dan media
+                    promosi digital.
+                </p>
+
+                <a
+                    href="https://wa.me/6281330319051?text=Halo,%20saya%20ingin%20tanya%20tentang%20Mockup%203D"
+                    target="_blank"
+                    class="product-btn">
+
+                    Tanya via WA
+
+                </a>
+
+            </div>
+
+
+
+            <!-- BRANDING -->
+
+            <div class="digital-card">
+
+                <span class="digital-number">
+                    03 / BRANDING
+                </span>
+
+                <h3>
+                    Branding & Logo Otobus
+                </h3>
+
+                <p>
+                    Pembuatan identitas brand, logo otobus,
+                    poster promosi, dan materi konten media
+                    sosial.
+                </p>
+
+                <a
+                    href="https://wa.me/6281330319051?text=Halo,%20tanya%20jasa%20Branding%20dan%20Logo%20Otobus"
+                    target="_blank"
+                    class="product-btn">
+
+                    Konsultasi WA
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WHY BARBARA
+===================================================== -->
+
+<section class="why" id="tentang">
+
+    <div class="container">
+
+        <div class="why-grid">
+
+
+            <div>
+
+                <span class="section-label">
+                    Why Barbara Victorious?
+                </span>
+
+                <h2>
+                    Bukan cuma desain.<br>
+                    Tapi <span>karakter.</span>
+                </h2>
+
+                <p class="why-description">
+                    Setiap desain dibuat dengan memperhatikan
+                    karakter visual, komposisi, detail, serta
+                    kebutuhan penggunaan akhirnya.
+                </p>
+
+                <p class="why-description">
+                    Mulai dari livery bus, apparel, logo,
+                    branding, sampai berbagai kebutuhan visual
+                    digital.
+                </p>
+
+            </div>
+
+
+            <div class="features">
+
+
+                <div class="feature">
+
+                    <h3>
+                        Custom Design
+                    </h3>
+
+                    <p>
+                        Desain dibuat menyesuaikan konsep
+                        dan kebutuhan customer.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <h3>
+                        Vector HD
+                    </h3>
+
+                    <p>
+                        File desain berkualitas tinggi
+                        dan siap digunakan.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <h3>
+                        Detail & Presisi
+                    </h3>
+
+                    <p>
+                        Memperhatikan detail visual agar
+                        hasil tetap terlihat profesional.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <h3>
+                        Fast Response
+                    </h3>
+
+                    <p>
+                        Konsultasi dan komunikasi langsung
+                        melalui WhatsApp.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact" id="kontak">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div>
+
+                <h2>
+                    Punya konsep desain?
+                </h2>
+
+                <p>
+                    Konsultasikan kebutuhan desain kamu
+                    langsung dengan Barbara Victorious Jombang.
+                </p>
+
+            </div>
+
+
+            <div class="contact-buttons">
+
+                <a
+                    href="https://wa.me/6281330319051?text=Halo%20Barbara%20Victorious,%20saya%20ingin%20konsultasi%20desain"
+                    target="_blank"
+                    class="btn btn-red">
+
+                    WhatsApp
+
+                </a>
+
+
+                <a
+                    href="https://linktr.ee/onlybarzz_"
+                    target="_blank"
+                    class="btn"
+                    style="
+                        background:#111;
+                        color:white;
+                    ">
+
+                    Linktree
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LOCATION
+===================================================== -->
+
+<section class="location">
+
+    <div class="container">
+
+        <div class="location-box">
+
+
+            <div class="location-row">
+
+                <strong>
+                    📍 Alamat Workshop
+                </strong>
+
+                <p>
+                    Dusun Tunggul, Tunggorono,
+                    Kec. Jombang, Kabupaten Jombang,
+                    Jawa Timur 61419
+                </p>
+
+            </div>
+
+
+            <div class="location-row">
+
+                <strong>
+                    📞 Kontak WhatsApp
+                </strong>
+
+                <p>
+                    0813-3031-9051
+                </p>
+
+            </div>
+
+
+            <div class="location-row">
+
+                <strong>
+                    🔗 Linktree
+                </strong>
+
+                <p>
+
+                    <a
+                        href="https://linktr.ee/onlybarzz_"
+                        target="_blank"
+                        style="color:#d71920;font-weight:700;">
+
+                        linktr.ee/onlybarzz_
+
+                    </a>
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!--
+
+FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+        © 2026
+        <strong>Barbara Victorious Jombang</strong>.
+        All rights reserved.
+    </p>
+
+    <a
+        href="https://linktr.ee/onlybarzz_"
+        target="_blank"
+        class="footer-link">
+
+        linktr.ee/onlybarzz_
+
+    </a>
+
+</footer>
+
+
 
 </body>
 </html>
